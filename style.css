@@ -1,0 +1,297 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: hsl(236, 13%, 42%);
+  font-size: 0.9375rem;
+  
+}
+
+.wrapper {
+  padding: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.overlay.active {
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 100%;
+
+  background-color: hsla(240, 100%, 5%, 0.5);
+  z-index: 100;
+}
+
+.menu-button, .close-button {
+  border: 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#logo {
+  width: 2.825rem;
+}
+
+nav {
+  position: fixed;
+  right: -1000px;
+  top: 0;
+  background-color: white;
+  height: 100vh;
+  width: 70%;
+  padding: 1rem 1.5rem;
+  transition: right .3s ease-in-out;
+}
+
+nav ul {
+  display: grid;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: hsl(236, 13%, 42%);
+  font-size: 1.125rem;
+}
+
+nav ul li a:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+.close-button {
+  display: flex;
+  margin-left: auto;
+}
+
+.active {
+  right: 0;
+  z-index: 101;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+section.hero {
+  flex-basis: 640px;
+  flex-grow: 1;
+}
+
+.hero__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  margin-top: 1.5rem;
+}
+
+.hero__title {
+  flex-basis: 320px;
+  flex-grow: 1;
+
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: hsl(240, 100%, 5%);
+  line-height: 1;
+}
+
+.hero__content div {
+  flex-basis: 320px;
+  flex-grow: 1;
+}
+
+.hero__content button {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 0;
+  background-color: hsl(5, 85%, 63%);
+  color: hsl(36, 100%, 99%);
+  letter-spacing: 4px;
+  padding: 0.875rem 2.25rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.hero__content button:hover {
+  background-color: hsl(240, 100%, 5%);
+}
+
+article {
+  flex-basis: 320px;
+  flex-grow: 1;
+  background-color: hsl(240, 100%, 5%);
+  padding: 1.5rem 1.25rem;
+}
+
+p.category {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(35, 77%, 62%);
+  line-height: 1.2;
+}
+
+.article__link {
+  display: inline-block;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: hsl(36, 100%, 99%);
+  margin-bottom: 0.5rem;
+}
+
+.article__link:hover {
+  color:hsl(35, 77%, 62%);
+}
+
+.article__content > div {
+  padding-block: 1.825rem;
+}
+
+.article__content > div:last-child {
+  padding-bottom: 0;
+}
+
+.article__content > div:not(:last-child) {
+  border-bottom: 1px solid hsl(236, 13%, 42%);
+}
+
+.article__content p {
+  color: hsl(233, 8%, 79%);
+}
+
+section.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  margin-top: 2rem;
+}
+
+.gallery__content {
+  flex-basis: 320px;
+  flex-grow: 1;
+
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.75rem;
+}
+
+p.number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(233, 8%, 79%);
+}
+
+.gallery__link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: hsl(240, 100%, 5%);
+  margin-bottom: 0.5rem;
+}
+
+.gallery__link:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+@media (min-width: 800px) {
+  .menu-button, .close-button {
+    display: none;
+  }
+
+  nav {
+    display: block;
+    position: unset;
+    padding: unset;
+    width: auto;
+    height: auto;
+    transform: translateX(0%);
+  }
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    margin-top: unset;
+  }
+
+  nav ul li {
+    list-style: none;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    font-size: unset;
+    color: hsl(236, 13%, 42%);
+  }
+
+  nav ul li a:hover {
+    color: hsl(5, 85%, 63%);
+  }
+}
+
+@media (min-width: 1073px) {
+  main {
+    gap: 1.5rem;
+  }
+}
+
+
