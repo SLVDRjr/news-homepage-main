@@ -254,6 +254,10 @@ p.number {
 }
 
 @media (min-width: 800px) {
+  .overlay.active {
+    display: none;
+  }
+
   .menu-button, .close-button {
     display: none;
   }
